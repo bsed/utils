@@ -49,14 +49,20 @@ public class HttpUtil {
      * 
      * @param key
      * @param value
-     * @return
+     * @return String
      */
     public static String createParameter(String key, String value) {
 		return createParameter(key,value,false);
     	
     }
     
-    
+    /**
+     * 
+     * @param key
+     * @param value
+     * @param isFirst
+     * @return String
+     */
 	public static String createParameter(String key, String value, boolean isFirst) {
 		if(StrUtil.isEmpty(key)) {
 			key = "";
@@ -80,7 +86,7 @@ public class HttpUtil {
      * 
      * @param url url
      * @param parasMap 参数map,value为参数名，value为参数值
-     * @return
+     * @return String
      *         <ul>
      *         <li>若url为null，默认当作""(空字符串)处理</li>
      *         </ul>
@@ -106,7 +112,7 @@ public class HttpUtil {
      * 
      * @param url url
      * @param parasMap 参数map,value为参数名，value为参数值
-     * @return
+     * @return String
      *         <ul>
      *         <li>若url为null，默认当作""(空字符串)处理</li>
      *         </ul>
@@ -264,7 +270,7 @@ public class HttpUtil {
      * 解析字符串得到key和value对应的map
      * 
      * @param paras 字符串
-     * @return
+     * @return map
      *         <ul>
      *         <li>见 {@link HttpUtils#getParasMap(String, String)}</li>
      *         </ul>
@@ -289,7 +295,7 @@ public class HttpUtil {
      * 
      * @param paras 字符串
      * @param parametersSeparator 参数分隔符
-     * @return
+     * @return map
      *         <ul>
      *         <li>若paras为null或为空字符串，则返回null</li>
      *         <li>若parametersSeparator为null或为空字符串，则当作{@link HttpUtils#PARAMETERS_SEPARATOR}</li>
@@ -381,7 +387,7 @@ public class HttpUtil {
      * 
      * @param url url
      * @param key 参数key
-     * @return
+     * @return String
      */
     public static String getQueryParameter(String url, String key) {
         return getQueryParameter(url, key, URL_AND_PARA_SEPARATOR, PARAMETERS_SEPARATOR);
@@ -407,7 +413,7 @@ public class HttpUtil {
      * @param key 参数key
      * @param paraSeparator 参数之间分隔符
      * @param pathParaSeparator url path和参数之间分隔符
-     * @return
+     * @return String
      */
     public static String getQueryParameter(String url, String key, String pathParaSeparator, String paraSeparator) {
         if (StrUtil.isEmpty(key) || StrUtil.isEmpty(url)) {
@@ -467,7 +473,7 @@ public class HttpUtil {
      * 
      * @param url url地址
      * @param timeOut 超时时间，毫秒为单位
-     * @return
+     * @return String
      */
     public static String httpGet(String url, int timeOut) {
         if (StrUtil.isEmpty(url)) {
@@ -499,7 +505,7 @@ public class HttpUtil {
      * </ul>
      * 
      * @param url url地址
-     * @return
+     * @return String
      */
     public static String httpGet(String url) {
         return httpGet(url, -1);
@@ -513,7 +519,7 @@ public class HttpUtil {
      * 
      * @param url url地址
      * @param paras url参数
-     * @return
+     * @return String
      */
     public static String httpGet(String url, String paras) {
 
@@ -532,7 +538,7 @@ public class HttpUtil {
      * 
      * @param url url地址
      * @param parasMap url参数map
-     * @return
+     * @return String
      */
     public static String httpGet(String url, Map<String, String> parasMap) {
 
@@ -548,7 +554,7 @@ public class HttpUtil {
      * 
      * @param url url地址
      * @param parasMap url参数map
-     * @return
+     * @return String
      */
     public static String httpGetEncodeParas(String url, Map<String, String> parasMap) {
 
@@ -565,7 +571,7 @@ public class HttpUtil {
      * @param url url链接
      * @param paras url参数
      * @param timeOut 超时时间，毫秒为单位
-     * @return
+     * @return String 
      */
     public static String httpPost(String url, String paras, int timeOut) {
         if (StrUtil.isEmpty(url)) {
@@ -603,7 +609,7 @@ public class HttpUtil {
      * 
      * @param url url链接
      * @param paras url参数
-     * @return
+     * @return String
      */
     public static String httpPost(String url, String paras) {
         return httpPost(url, paras, -1);
@@ -617,7 +623,7 @@ public class HttpUtil {
      * 
      * @param url url地址
      * @param parasMap url参数map
-     * @return
+     * @return String
      */
     public static String httpPost(String url, Map<String, String> parasMap) {
         return httpPost(url, getOrderedParas(parasMap));
@@ -631,7 +637,7 @@ public class HttpUtil {
      * 
      * @param url url地址
      * @param parasMap url参数map
-     * @return
+     * @return String
      */
     public static String httpPostEncodeParas(String url, Map<String, String> parasMap) {
         return httpPost(url, getOrderedValueEncodeParas(parasMap));
@@ -647,7 +653,7 @@ public class HttpUtil {
      * @param paras url参数
      * @param filePathMap 文件map，value为post对应字段，value为file path
      * @param timeOut 超时时间，毫秒为单位
-     * @return
+     * @return string
      */
     public static String httpPostWithFile(String url, String paras, Map<String, String> filePathMap, int timeOut) {
         if (StrUtil.isEmpty(url)) {
@@ -705,7 +711,7 @@ public class HttpUtil {
      * @param url url链接
      * @param paras url参数
      * @param filePathMap 文件map，value为post对应字段，value为file path
-     * @return
+     * @return String
      */
     public static String httpPostWithFile(String url, String paras, Map<String, String> filePathMap) {
         return httpPostWithFile(url, paras, filePathMap, -1);
@@ -720,7 +726,7 @@ public class HttpUtil {
      * @param url url地址
      * @param parasMap url参数map
      * @param filePathMap 文件map，value为post对应字段，value为file path
-     * @return
+     * @return String
      */
     public static String httpPostWithFile(String url, Map<String, String> parasMap, Map<String, String> filePathMap) {
         return httpPostWithFile(url, getOrderedParas(parasMap), filePathMap);
@@ -735,7 +741,7 @@ public class HttpUtil {
      * @param url url地址
      * @param parasMap url参数map
      * @param filePathMap 文件map，value为post对应字段，value为file path
-     * @return
+     * @return String
      */
     public static String httpPostEncodeParasWithFile(String url, Map<String, String> parasMap,
                                                      Map<String, String> filePathMap) {
@@ -751,7 +757,7 @@ public class HttpUtil {
      * @param url url地址
      * @param paras url参数
      * @param filePathMap 文件map，value为post对应字段，value为file path
-     * @return
+     * @return string
      */
     public static String httpPostEncodeParasWithFile(String url, String paras, Map<String, String> filePathMap) {
         return httpPostWithFile(url, paras, filePathMap);
@@ -759,7 +765,6 @@ public class HttpUtil {
 
     /**
      * 设置超时时间
-     * 
      * @param httpClient
      * @param timeOut
      */

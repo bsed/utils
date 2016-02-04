@@ -1572,7 +1572,7 @@ public class FileUtil {
      * <ul>
      * 
      * @param path 路径
-     * @return
+     * @return long 得到文件的大小
      */
     public static long getFileSize(String path) {
         if (StrUtil.isBlank(path)) {

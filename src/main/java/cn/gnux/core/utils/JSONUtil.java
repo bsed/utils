@@ -15,7 +15,7 @@ public class JSONUtil {
      * @param jsonObject
      * @param key
      * @param defaultValue
-     * @return
+     * @return Long
      *         <ul>
      *         <li>若jsonObject为null，返回defaultValue</li>
      *         <li>若key为null或为空字符串，返回defaultValue</li>
@@ -41,7 +41,7 @@ public class JSONUtil {
      * @param jsonData
      * @param key
      * @param defaultValue
-     * @return
+     * @return Long
      *         <ul>
      *         <li>若jsonData 为null或为空，返回defaultValue</li>
      *         <li>若jsonData {@link JSONObject#JSONObject(String)}异常，返回defaultValue</li>
@@ -67,7 +67,7 @@ public class JSONUtil {
      * @param jsonObject
      * @param key
      * @param defaultValue
-     * @return
+     * @return Long
      */
     public static long getLong(JSONObject jsonObject, String key, long defaultValue) {
         return getLong(jsonObject, key, (Long)defaultValue);
@@ -79,7 +79,7 @@ public class JSONUtil {
      * @param jsonData
      * @param key
      * @param defaultValue
-     * @return
+     * @return long
      */
     public static long getLong(String jsonData, String key, long defaultValue) {
         return getLong(jsonData, key, (Long)defaultValue);
@@ -91,7 +91,7 @@ public class JSONUtil {
      * @param jsonObject
      * @param key
      * @param defaultValue
-     * @return
+     * @return Integer
      *         <ul>
      *         <li>若jsonObject为null，返回defaultValue</li>
      *         <li>若key为null或为空字符串，返回defaultValue</li>
@@ -117,7 +117,7 @@ public class JSONUtil {
      * @param jsonData
      * @param key
      * @param defaultValue
-     * @return
+     * @return Integer
      *         <ul>
      *         <li>若jsonData 为null或为空，返回defaultValue</li>
      *         <li>若jsonData {@link JSONObject#JSONObject(String)}异常，返回defaultValue</li>
@@ -143,7 +143,7 @@ public class JSONUtil {
      * @param jsonObject
      * @param key
      * @param defaultValue
-     * @return
+     * @return int
      */
     public static int getInt(JSONObject jsonObject, String key, int defaultValue) {
         return getInt(jsonObject, key, (Integer)defaultValue);
@@ -155,7 +155,7 @@ public class JSONUtil {
      * @param jsonObject
      * @param key
      * @param defaultValue
-     * @return
+     * @return int
      */
     public static int getInt(String jsonData, String key, int defaultValue) {
         return getInt(jsonData, key, (Integer)defaultValue);
@@ -167,7 +167,7 @@ public class JSONUtil {
      * @param jsonObject
      * @param key
      * @param defaultValue
-     * @return
+     * @return String
      *         <ul>
      *         <li>若jsonObject为null，返回defaultValue</li>
      *         <li>若key为null或为空字符串，返回defaultValue</li>
@@ -193,7 +193,7 @@ public class JSONUtil {
      * @param jsonData
      * @param key
      * @param defaultValue
-     * @return
+     * @return String
      *         <ul>
      *         <li>若jsonData 为null或为空，返回defaultValue</li>
      *         <li>若jsonData {@link JSONObject#JSONObject(String)}异常，返回defaultValue</li>
@@ -219,7 +219,7 @@ public class JSONUtil {
      * @param jsonObject
      * @param key
      * @param defaultValue
-     * @return
+     * @return String
      *         <ul>
      *         <li>若jsonObject为null，返回defaultValue</li>
      *         <li>若key为null或为空字符串，返回defaultValue</li>
@@ -254,7 +254,7 @@ public class JSONUtil {
      * @param jsonData
      * @param key
      * @param defaultValue
-     * @return
+     * @return String[]
      *         <ul>
      *         <li>若jsonData 为null或为空，返回defaultValue</li>
      *         <li>若jsonData {@link JSONObject#JSONObject(String)}异常，返回defaultValue</li>
@@ -280,7 +280,7 @@ public class JSONUtil {
      * @param jsonObject
      * @param key
      * @param defaultValue
-     * @return
+     * @return JSONObject
      *         <ul>
      *         <li>若jsonObject为null，返回defaultValue</li>
      *         <li>若key为null或为空字符串，返回defaultValue</li>
@@ -306,7 +306,7 @@ public class JSONUtil {
      * @param jsonData
      * @param key
      * @param defaultValue
-     * @return
+     * @return JSONObject
      *         <ul>
      *         <li>若jsonData 为null或为空，返回defaultValue</li>
      *         <li>若jsonData {@link JSONObject#JSONObject(String)}异常，返回defaultValue</li>
@@ -332,7 +332,7 @@ public class JSONUtil {
      * @param jsonObject
      * @param key
      * @param defaultValue
-     * @return
+     * @return JSONObject
      *         <ul>
      *         <li>若jsonObject为null，返回defaultValue</li>
      *         <li>若key为null或为空字符串，返回defaultValue</li>
@@ -358,7 +358,7 @@ public class JSONUtil {
      * @param jsonData
      * @param key
      * @param defaultValue
-     * @return
+     * @return JSONObject
      *         <ul>
      *         <li>若jsonData 为null或为空，返回defaultValue</li>
      *         <li>若jsonData {@link JSONObject#JSONObject(String)}异常，返回defaultValue</li>
@@ -384,7 +384,7 @@ public class JSONUtil {
      * @param jsonObject
      * @param key
      * @param defaultValue
-     * @return
+     * @return JSONObject
      *         <ul>
      *         <li>若jsonObject为null，返回defaultValue</li>
      *         <li>若key为null或为空字符串，返回defaultValue</li>
@@ -409,7 +409,7 @@ public class JSONUtil {
      * @param jsonData
      * @param key
      * @param defaultValue
-     * @return
+     * @return JSONObject
      *         <ul>
      *         <li>若jsonData 为null或为空，返回defaultValue</li>
      *         <li>若jsonData {@link JSONObject#JSONObject(String)}异常，返回defaultValue</li>
@@ -433,7 +433,7 @@ public class JSONUtil {
      * 将key和value键值对形式的json转换成map，忽略为空的key，在解析异常时put空字符串
      * 
      * @param sourceObj key和value键值对形式的json
-     * @return
+     * @return JSONObject
      */
     @SuppressWarnings("rawtypes")
     public static Map<String, String> parseKeyAndValueToMap(JSONObject sourceObj) {
@@ -453,7 +453,7 @@ public class JSONUtil {
      * 将key和value键值对形式的string json转换成map，忽略为空的key，在解析异常时put空字符串
      * 
      * @param source key和value键值对形式的json 字符串
-     * @return
+     * @return JSONObject
      * @see
      *      <ul>
      *      <li>若source 为null或为空，返回null</li>

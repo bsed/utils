@@ -34,7 +34,7 @@ public class ArrayUtil extends org.apache.commons.lang3.ArrayUtils {
 	 *            默认返回值
 	 * @param isCircle
 	 *            是否是圆
-	 * @return
+	 * @return V
 	 */
 	public static <V> V getLast(V[] sourceArray, V value, V defaultValue, boolean isCircle) {
 		if (isEmpty(sourceArray)) {
